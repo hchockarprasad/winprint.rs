@@ -105,6 +105,8 @@ impl FilePrinter for PdfiumPrinter {
                     let physical_height = get_attr(PHYSICALHEIGHT) as f64;
                     let scale =
                         f64::min(physical_width / page_width, physical_height / page_height);
+                    // Disable auto scaling..
+                    let scale = 1.0;
                     let w = page_width * scale;
                     let h = page_height * scale;
                     let org_x = -get_attr(PHYSICALOFFSETX);
